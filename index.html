@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
+<head>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2575.2">
+  <style type="text/css">
+    p.p1 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #519ce9}
+    p.p2 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #88b966}
+    p.p3 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #d65562}
+    p.p4 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #9ba2b1}
+    p.p5 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #9ba2b1; min-height: 16.0px}
+    p.p6 {margin: 0.0px 0.0px 0.0px 0.0px; font: 13.0px '.AppleSystemUIFontMonospaced'; color: #4a505d}
+    span.s1 {color: #b85dd5}
+    span.s2 {color: #9ba2b1}
+    span.s3 {color: #d65562}
+    span.s4 {color: #c58853}
+    span.s5 {color: #88b966}
+    span.s6 {color: #519ce9}
+  </style>
+</head>
+<body>
+<p class="p1">&lt;!DOCTYPE <span class="s1">html</span>&gt;</p>
+<p class="p2"><span class="s2">&lt;</span><span class="s3">html</span><span class="s2"> </span><span class="s4">lang</span><span class="s2">=</span>"zh-Hant"<span class="s2">&gt;</span></p>
+<p class="p3"><span class="s2">&lt;</span>head<span class="s2">&gt;</span></p>
+<p class="p4"><span class="Apple-converted-space">  </span>&lt;<span class="s3">meta</span> <span class="s4">charset</span>=<span class="s5">"UTF-8"</span> /&gt;</p>
+<p class="p4"><span class="Apple-converted-space">  </span>&lt;<span class="s3">title</span>&gt;第N次DCのIG存活時間&lt;/<span class="s3">title</span>&gt;</p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">  </span>&lt;</span>style<span class="s2">&gt;</span></p>
+<p class="p4"><span class="Apple-converted-space">    </span><span class="s3">body</span> {</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s5">font-family</span>: sans-serif;</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s5">margin</span>: <span class="s4">40px</span>;</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s5">text-align</span>: center;</p>
+<p class="p4"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="Apple-converted-space">    </span><span class="s3">h1</span> {</p>
+<p class="p2"><span class="s2"><span class="Apple-converted-space">      </span></span>margin-bottom<span class="s2">: </span><span class="s4">20px</span><span class="s2">;</span></p>
+<p class="p4"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="Apple-converted-space">    </span><span class="s6">#timer</span> {</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s5">font-size</span>: <span class="s4">2rem</span>;</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s5">font-weight</span>: bold;</p>
+<p class="p4"><span class="Apple-converted-space">    </span>}</p>
+<p class="p4"><span class="Apple-converted-space">  </span>&lt;/<span class="s3">style</span>&gt;</p>
+<p class="p3"><span class="s2">&lt;/</span>head<span class="s2">&gt;</span></p>
+<p class="p3"><span class="s2">&lt;</span>body<span class="s2">&gt;</span></p>
+<p class="p4"><span class="Apple-converted-space">  </span>&lt;<span class="s3">h1</span>&gt;第N次DCのIG存活時間&lt;/<span class="s3">h1</span>&gt;</p>
+<p class="p4"><span class="Apple-converted-space">  </span>&lt;<span class="s3">p</span> <span class="s4">id</span>=<span class="s5">"timer"</span>&gt;計時中...&lt;/<span class="s3">p</span>&gt;</p>
+<p class="p5"><br></p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">  </span>&lt;</span>script<span class="s2">&gt;</span></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span>// 設定起始時間（此處以 2025/01/02 00:00:00 為例）</p>
+<p class="p4"><span class="Apple-converted-space">    </span><span class="s1">const</span> startTime = <span class="s1">new</span> Date(<span class="s5">"2025-01-02T00:00:00"</span>).getTime();</p>
+<p class="p5"><br></p>
+<p class="p4"><span class="Apple-converted-space">    </span><span class="s1">function</span> updateTimer() {</p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span></span>// 取得現在時間</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s1">const</span> currentTime = <span class="s1">new</span> Date().getTime();</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span></span>// 計算經過的毫秒數</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s1">const</span> elapsedMs = currentTime - startTime;</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span></span>// 換算為秒</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s1">const</span> totalSeconds = Math.floor(elapsedMs / <span class="s4">1000</span>);</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span></span>// 轉換成「幾分幾秒」</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s1">const</span> minutes = Math.floor(totalSeconds / <span class="s4">60</span>);</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s1">const</span> seconds = totalSeconds % <span class="s4">60</span>;</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span></span>// 顯示格式： X分Y秒</p>
+<p class="p4"><span class="Apple-converted-space">      </span><span class="s1">const</span> timerText = <span class="s5">`</span><span class="s3">${minutes}</span><span class="s5">分</span><span class="s3">${seconds}</span><span class="s5">秒`</span>;</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">      </span></span>// 更新到網頁</p>
+<p class="p4"><span class="Apple-converted-space">      </span>document.getElementById(<span class="s5">"timer"</span>).textContent = timerText;</p>
+<p class="p4"><span class="Apple-converted-space">    </span>}</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span>// 每秒更新一次</p>
+<p class="p4"><span class="Apple-converted-space">    </span>setInterval(updateTimer, <span class="s4">1000</span>);</p>
+<p class="p5"><br></p>
+<p class="p6"><span class="s2"><span class="Apple-converted-space">    </span></span>// 先立即更新一次</p>
+<p class="p4"><span class="Apple-converted-space">    </span>updateTimer();</p>
+<p class="p3"><span class="s2"><span class="Apple-converted-space">  </span>&lt;/</span>script<span class="s2">&gt;</span></p>
+<p class="p3"><span class="s2">&lt;/</span>body<span class="s2">&gt;</span></p>
+<p class="p3"><span class="s2">&lt;/</span>html<span class="s2">&gt;</span></p>
+</body>
+</html>
